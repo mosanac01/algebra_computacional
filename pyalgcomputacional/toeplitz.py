@@ -1,5 +1,6 @@
 from .anillo_fp_x import anillo_fp_x
 from .anillo_fq_x import anillo_fq_x
+from .karatsuba import fp_x_mult_karatsuba, fq_x_mult_karatsuba
 
 # ==========================================
 # MATRICES DE TOEPLITZ SOBRE Fp
@@ -19,7 +20,7 @@ def fp_toep_inf_vec(fp, n, a, b):
         raise ValueError("Las longitudes de a y b deben ser iguales a n")
     
     # Construir Fp[x]
-    fpx = cf.anillo_fp_x(fp)
+    fpx = anillo_fp_x(fp)
 
     # Pasamos a y b a polinomios
     A = fpx.elem_de_tuple(a)
@@ -50,7 +51,7 @@ def fp_toep_sup_vec(fp, n, a, b):
         raise ValueError("Las longitudes de a y b deben ser iguales a n")
     
     # Construir Fp[x]
-    fpx = cf.anillo_fp_x(fp)
+    fpx = anillo_fp_x(fp)
 
     # Pasamos a y b a polinomios
     A = fpx.elem_de_tuple(a[::-1])  # hemos invertido a
@@ -260,7 +261,7 @@ def fq_toep_inf_vec(fq, n, a, b):
         raise ValueError("Las longitudes de a y b deben ser iguales a n")
     
     # Construir Fq[x]
-    fqx = cf.anillo_fq_x(fq)
+    fqx = anillo_fq_x(fq)
 
     # Pasamos a y b a polinomios
     A = fqx.elem_de_tuple(a)
@@ -291,7 +292,7 @@ def fq_toep_sup_vec(fq, n, a, b):
         raise ValueError("Las longitudes de a y b deben ser iguales a n")
     
     # Construir Fq[x]
-    fqx = cf.anillo_fq_x(fq)
+    fqx = anillo_fq_x(fq)
 
     # Pasamos a y b a polinomios
     A = fqx.elem_de_tuple(a[::-1])  # hemos invertido a
