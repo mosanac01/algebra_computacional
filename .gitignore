@@ -1,9 +1,10 @@
-# Archivos de Python
 __pycache__/
 *.py[cod]
-*$py.class
-
-# Entornos virtuales
+*.egg-info/
+.venv/
 venv/
 env/
-.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+*.so
+.DS_Store
