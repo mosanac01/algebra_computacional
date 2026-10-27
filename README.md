@@ -1,6 +1,7 @@
 # pyalgcomputacional 🧮
 
-Una librería modular de álgebra computacional en Python. El paquete implementa estructuras algebraicas desde cero y optimiza las operaciones mediante algoritmos asintóticamente rápidos, evitando depender de librerías externas.
+Una librería modular de álgebra computacional en Python. Desarrollada inicialmente como un proyecto de una asignatura de la universidad, la base de código se ha dividido e implementado como un paquete. El paquete implementa estructuras algebraicas desde cero y optimiza las operaciones mediante algoritmos asintóticamente rápidos, evitando depender de librerías externas para la lógica matemática central.
+
 
 ## 🚀 Características Principales
 
@@ -14,22 +15,37 @@ Una librería modular de álgebra computacional en Python. El paquete implementa
 * **Factorización Avanzada:**
   * Factorización completa de polinomios usando el algoritmo de **Cantor-Zassenhaus** (Square-free, Distinct-degree y Equal-degree factorization).
 
+
 ## 📁 Arquitectura del Proyecto
 
 ```text
-pyalgcomputacional/
-├── anillo_fp_x.py      # Lógica de polinomios sobre Fp
-├── anillo_fq_x.py      # Lógica de polinomios sobre extensiones Fq
-├── cuerpo_fp.py        # Cuerpos finitos base
-├── cuerpo_fq.py        # Extensiones de cuerpos finitos
-├── division.py         # División rápida (Toeplitz)
-├── factorizacion.py    # Algoritmo Cantor-Zassenhaus (Puro)
-├── karatsuba.py        # Multiplicación rápida (Puro)
-├── toeplitz.py         # Álgebra lineal matricial sobre cuerpos finitos
-└── transformadas.py    # FFT / Cooley-Tukey (Puro)
+algebra_computacional/
+├── pyalgcomputacional/
+│   ├── __init__.py         # Inicializador del paquete Python
+│   ├── anillo_fp_x.py      # Lógica de polinomios sobre Fp
+│   ├── anillo_fq_x.py      # Lógica de polinomios sobre extensiones Fq
+│   ├── cuerpo_fp.py        # Cuerpos finitos base
+│   ├── cuerpo_fq.py        # Extensiones de cuerpos finitos
+│   ├── division.py         # División rápida (Toeplitz)
+│   ├── factorizacion.py    # Algoritmo Cantor-Zassenhaus (Puro)
+│   ├── karatsuba.py        # Multiplicación rápida (Puro)
+│   ├── toeplitz.py         # Álgebra lineal matricial sobre cuerpos finitos
+│   └── transformadas.py    # FFT / Cooley-Tukey (Puro)
+├── ejemplos/
+│   ├── 01_CuerposFinitos.py
+│   ├── 02_AnillosPolinomios.py
+│   ├── 03_DivisionToeplitzKaratsuba.py
+│   ├── 04_FactorizacionFpx.py
+│   ├── 05_FactorizacionFqx.py
+│   └── 06_TransformadasFFT.py
+├── .gitignore              # Reglas de exclusión para Git
+├── requirements.txt
+└── README.md
 ```
 
-## ⚙️ Instalación
+## ⚙️ Instalación y Requisitos
+
+El proyecto requiere **Python 3.10+**.
 
 1. Clona el repositorio:
 ```bash
@@ -37,7 +53,7 @@ git clone [https://github.com/mosanac01/algebra_computacional.git](https://githu
 cd algebra_computacional
 ```
 
-2. Instala las dependencias (solo requiere `sympy` para tests de primalidad):
+2. Instala las dependencias (requiere `sympy>=1.12` exclusivamente para tests de primalidad iniciales):
 ```bash
 pip install -r requirements.txt
 ```
@@ -66,3 +82,6 @@ for base, exponente in factores:
     print(f" -> ({fpx.conv_a_str(base)})^{exponente}")
 ```
 
+## 🧪 Validación y Pruebas
+
+El directorio `ejemplos/` contiene seis scripts que demuestran el funcionamiento de las estructuras y algoritmos.
