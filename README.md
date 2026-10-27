@@ -1,6 +1,12 @@
 # pyalgcomputacional 🧮
 
-Una librería modular de álgebra computacional en Python. Desarrollada inicialmente como un proyecto de una asignatura de la universidad, la base de código se ha dividido e implementado como un paquete. El paquete implementa estructuras algebraicas desde cero y optimiza las operaciones mediante algoritmos asintóticamente rápidos, evitando depender de librerías externas para la lógica matemática central.
+Una librería modular de álgebra computacional en Python. El paquete implementa estructuras algebraicas desde cero e incorpora implementaciones de algoritmos de multiplicación y división polinómica rápida, así como transformadas de Fourier sobre cuerpos finitos, con el objetivo de mejorar la eficiencia de determinadas operaciones algebraicas, evitando depender de librerías externas para la lógica matemática central.
+
+Este proyecto se desarrolló individualmente para la asignatura de Álgebra Computacional del Grado en Matemáticas.
+
+El profesor proporcionó los esqueletos iniciales, que definían las clases y las interfaces de las funciones. A partir de ellos y de los contenidos teóricos de la asignatura, implementé las estructuras algebraicas y los algoritmos, tomando decisiones sobre la representación interna de los elementos y su implementación.
+
+Posteriormente, reorganicé el código original en un paquete modular para facilitar su mantenimiento, comprensión y reutilización.
 
 
 ## 🚀 Características Principales
@@ -49,7 +55,7 @@ El proyecto requiere **Python 3.10+**.
 
 1. Clona el repositorio:
 ```bash
-git clone [https://github.com/mosanac01/algebra_computacional.git](https://github.com/mosanac01/algebra_computacional.git)
+git clone https://github.com/mosanac01/algebra_computacional.git
 cd algebra_computacional
 ```
 
@@ -82,6 +88,6 @@ for base, exponente in factores:
     print(f" -> ({fpx.conv_a_str(base)})^{exponente}")
 ```
 
-## 🧪 Validación y Pruebas
+## 🧪 Ejemplos
 
 El directorio `ejemplos/` contiene seis scripts que demuestran el funcionamiento de las estructuras y algoritmos.
